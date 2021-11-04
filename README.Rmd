@@ -35,11 +35,11 @@ library(clockPlot)
 ### 1. Produce a default clockPlot from a single value
 
 A default clockPlot will show the following features:
-* Hour and minute hands
-* Minute intervals
-* Enlarged, hour intervals
-* Numeric labels for each hour
-* A border
+  * Hour and minute hands
+  * Minute intervals
+  * Enlarged, hour intervals
+  * Numeric labels for each hour
+  * A border
 
 ```{r}
 #Produce a default clockPlot
@@ -89,7 +89,7 @@ Notes:
 * clockPlots are added to the *clockPlots* column at the front of the tibble parsed
 * View clockPlot using clockPlots[[column]][[row]]
   * column will be 1 by default
-People
+
 ```{r}
 #Produce clockPlots from a tibble
 
