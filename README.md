@@ -47,12 +47,15 @@ clockPlot(time = someTimeValue)
 
 ### 2. Customise the look of your clockPlot
 
-clockPlot allows for various means of customisation: \* secondHand -
-defaults to false, set to true to show a red secondhand \* labels - can
-show *none*, *numeric* (default) or *roman numerals* \* minuteMarks -
-defaults to TRUE, set to false to hide minute intervals \* hourMarks -
-defaults to TRUE, set to false to hide the hour intervals \* border -
-defaults to TRUE, set to false to hide the border
+clockPlot allows for various means of customisation:
+
+-   secondHand - defaults to false, set to true to show a red secondhand
+-   labels - can show *none*, *numeric* (default) or *roman numerals*
+-   minuteMarks - defaults to TRUE, set to false to hide minute
+    intervals
+-   hourMarks - defaults to TRUE, set to false to hide the hour
+    intervals
+-   border - defaults to TRUE, set to false to hide the border
 
 Here a few examples with varying options (not an exhaustive list of
 option combinations)
@@ -90,11 +93,15 @@ Occasionally you may want to produce a series of clockPlots, for example
 if you are printing off multiple versions for a student worksheet. Here
 are some examples of how to do so.
 
-Notes: \* All clockPlots will have the same options \* You must specify
-the name of the column inside the tibble \* This is using the *column*
-argument \* clockPlots are added to the *clockPlots* column at the front
-of the tibble parsed \* View clockPlot using
-clockPlots\[\[column\]\]\[\[row\]\] \* column will be 1 by default
+Notes:
+
+-   All clockPlots will have the same options
+-   You must specify the name of the column inside the tibble
+    -   This is using the *column* argument
+-   clockPlots are added to the *clockPlots* column at the front of the
+    tibble parsed
+-   View clockPlot using clockPlots\[\[column\]\]\[\[row\]\]
+    -   column will be 1 by default
 
 ``` r
 #Produce clockPlots from a tibble
