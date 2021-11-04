@@ -25,9 +25,13 @@ library(clockPlot)
 
 ### 1. Produce a default clockPlot from a single value
 
-A default clockPlot will show the following features: \* Hour and minute
-hands \* Minute intervals \* Enlarged, hour intervals \* Numeric labels
-for each hour \* A border
+A default clockPlot will show the following features:
+
+-   Hour and minute hands
+-   Minute intervals
+-   Enlarged, hour intervals
+-   Numeric labels for each hour
+-   A border
 
 ``` r
 #Produce a default clockPlot
