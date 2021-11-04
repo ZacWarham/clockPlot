@@ -38,5 +38,6 @@ Uses ggplot to create a clock face graphic for visual purposes. This could then 
 \examples{
 clockPlot(Sys.time())
 clockPlot(Sys.time(), labels = "roman")
+clockPlot(tibble::tibble(times = c(Sys.time(), Sys.time())), column = "times")
 
 }

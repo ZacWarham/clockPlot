@@ -60,7 +60,7 @@ Here a few examples with varying options (not an exhaustive list of
 option combinations)
 
 ``` r
-#Produce clockPlot's with differrent views
+#Produce clockPlot's with different views
 
 #Assign a time in the POSIX format to a value. The date is required in POSIX but is ignored in a clockPlot
 someTimeValue <- Sys.time()
@@ -125,7 +125,6 @@ clockPlots[[1]][[37]]
 
 ``` r
 clockPlots[[1]][[21]]
-#> Warning: Removed 12 rows containing missing values (geom_segment).
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-3.png" width="100%" />

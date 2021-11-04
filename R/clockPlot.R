@@ -19,6 +19,7 @@
 #' @examples
 #' clockPlot(Sys.time())
 #' clockPlot(Sys.time(), labels = "roman")
+#' clockPlot(tibble::tibble(times = c(Sys.time(), Sys.time())), column = "times")
 #'
 #' @export
 clockPlot <- function(time, column = "", secondHand = FALSE, labels = "numeric", minuteMarks = TRUE, hourMarks = TRUE, border = TRUE) {
@@ -113,7 +114,7 @@ clockPlot <- function(time, column = "", secondHand = FALSE, labels = "numeric",
         hourShift <- 4
       }
 
-      dispHour <- hourHand[ifelse(lubridate::hour(curTime) > 12, (lubridate::hour(curTime) %% 12)*5+hourShift, ifelse(lubridate::hour(curTime) == 0, 12*5+hourShift, (lubridate::hour(curTime))*5+hourShift)),]
+      dispHour <- hourHand[ifelse(lubridate::hour(curTime) > 12, (lubridate::hour(curTime) %% 12)*5+hourShift, ifelse((lubridate::hour(curTime) == 0 || lubridate::hour(curTime) == 12), ifelse(12*5+hourShift > 60, hourShift, 60), (lubridate::hour(curTime))*5+hourShift)),]
       dispMin <- minutes[ifelse(lubridate::minute(curTime) == 0, 60, lubridate::minute(curTime)),]
       dispSecond <- minutes[ifelse(lubridate::second(curTime) == 0, 60, lubridate::second(curTime)),]
 
