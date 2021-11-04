@@ -86,6 +86,9 @@ Notes:
 * All clockPlots will have the same options
 * You must specify the name of the column inside the tibble
   + This is using the *column* argument
+* clockPlots are added to the *clockPlots* column at the front of the tibble parsed
+* View clockPlot using clockPlots[[column]][[row]]
+  + column will be 1 by default
 
 ```{r}
 #Produce clockPlots from a tibble
@@ -95,10 +98,6 @@ tibbleTime <- tibble::tibble(times = Sys.time() - sample(1:100000, 50))
 
 #Create default clockPlots + second hands
 clockPlots <- clockPlot(tibbleTime, column = "times", secondHand = TRUE)
-
-#Compare input with output
-head(tibbleTime)
-head(clockPlots)
 
 #View some of the clockPlots
 clockPlots[[1]][[1]]
