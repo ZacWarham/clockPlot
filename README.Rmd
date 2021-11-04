@@ -29,7 +29,6 @@ Make sure to load package prior to running these examples.
 
 ```{r example}
 library(clockPlot)
-## basic example code
 ```
 
 ### 1. Produce a default clockPlot from a single value

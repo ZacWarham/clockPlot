@@ -20,7 +20,6 @@ Make sure to load package prior to running these examples.
 
 ``` r
 library(clockPlot)
-## basic example code
 ```
 
 ### 1. Produce a default clockPlot from a single value
@@ -126,6 +125,7 @@ clockPlots[[1]][[37]]
 
 ``` r
 clockPlots[[1]][[21]]
+#> Warning: Removed 12 rows containing missing values (geom_segment).
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-3.png" width="100%" />

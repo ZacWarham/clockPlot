@@ -79,7 +79,7 @@ clockPlot <- function(time, column = "", secondHand = FALSE, labels = "numeric",
 
   hour_labels <- tibble::tibble(hourInterval = c(1:12), x = 5 * sin(hourInterval * pi / 6), y = 5 * cos(hourInterval * pi / 6), roman = as.character(as.roman(hourInterval)))
   hours <- tibble::tibble(hourInterval = c(1:12), x = 4.5 * sin(hourInterval * pi / 6), y = 4.5 * cos(hourInterval * pi / 6))
-  hourHand <- tibble::tibble(hourInterval = c(1:12), x = 3 * sin(hourInterval * pi / 6), y = 3 * cos(hourInterval * pi / 6))
+  hourHand <- tibble::tibble(hourInterval = c(1:60), x = 3 * sin(hourInterval * pi / 30), y = 3 * cos(hourInterval * pi / 30))
   minutes <- tibble::tibble(minuteInterval = c(1:60), x = 4.5 * sin(minuteInterval * pi / 30), y = 4.5 * cos(minuteInterval * pi / 30))
   borderPos <- tibble::tibble(minuteInterval = c(1:61), x = 5.5 * sin(minuteInterval * pi / 30), y = 5.5 * cos(minuteInterval * pi / 30))
 
@@ -100,7 +100,20 @@ clockPlot <- function(time, column = "", secondHand = FALSE, labels = "numeric",
         stop("Time cannot be greater than 23:59:59")
       }
 
-      dispHour <- hourHand[ifelse(lubridate::hour(curTime) > 12, lubridate::hour(curTime) %% 12, ifelse(lubridate::hour(curTime) == 0, 12, lubridate::hour(curTime))),]
+      hourShift <- lubridate::minute(curTime)
+      if(hourShift < 12) {
+        hourShift <- 0
+      } else if(hourShift < 24) {
+        hourShift <- 1
+      } else if(hourShift < 36) {
+        hourShift <- 2
+      } else if(hourShift < 48) {
+        hourShift <- 3
+      } else {
+        hourShift <- 4
+      }
+
+      dispHour <- hourHand[ifelse(lubridate::hour(curTime) > 12, (lubridate::hour(curTime) %% 12)*5+hourShift, ifelse(lubridate::hour(curTime) == 0, 12*5+hourShift, (lubridate::hour(curTime))*5+hourShift)),]
       dispMin <- minutes[ifelse(lubridate::minute(curTime) == 0, 60, lubridate::minute(curTime)),]
       dispSecond <- minutes[ifelse(lubridate::second(curTime) == 0, 60, lubridate::second(curTime)),]
 
