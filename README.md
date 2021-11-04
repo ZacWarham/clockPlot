@@ -91,6 +91,7 @@ the name of the column inside the tibble \* This is using the *column*
 argument \* clockPlots are added to the *clockPlots* column at the front
 of the tibble parsed \* View clockPlot using
 clockPlots\[\[column\]\]\[\[row\]\] \* column will be 1 by default
+People
 
 ``` r
 #Produce clockPlots from a tibble
