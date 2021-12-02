@@ -130,12 +130,12 @@ clockPlot <- function(time, column = "", secondHand = FALSE, labels = "numeric",
         plot <- plot + ggplot2::geom_point(data = hour_labels, ggplot2::aes(x, y), alpha = 0) + ggplot2::geom_text(ggplot2::aes(label=hour_labels$roman))
       }
 
-      if(hourMarks) {
-        plot <- plot + ggplot2::geom_point(data = hours, ggplot2::aes(x, y), size = 3)
-      }
-
       if(minuteMarks) {
         plot <- plot + ggplot2::geom_point(data = minutes, ggplot2::aes(x, y), alpha = 0.5)
+      }
+
+      if(hourMarks) {
+        plot <- plot + ggplot2::geom_point(data = hours, ggplot2::aes(x, y), size = 3)
       }
 
       plot <- plot + ggplot2::geom_segment(ggplot2::aes(x = 0, y = 0, xend = dispHour[[2]], yend = dispHour[[3]]), colour = "black", size = 3, lineend="round")
